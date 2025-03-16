@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: travel-website
+    env: java
+    buildCommand: |
+      apt-get update && apt-get install -y maven
+      mvn clean package
+    startCommand: java -jar target/TravelPackages.war
+    branch: main
