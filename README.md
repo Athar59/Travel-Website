@@ -35,7 +35,7 @@ A Java-based web application that simplifies travel bookings by offering users a
 
 1. Clone the repository:
    ```sh
-   git clone <repository-url>
+   git clone https://github.com/Athar59/Travel-Website.git
    ```
 2. Import `travel.sql` into MySQL and configure `DBConnection.java`.
 3. Build & deploy:
