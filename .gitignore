@@ -39,14 +39,6 @@ replay_pid*
 .project
 .settings/
 
-# === IntelliJ IDEA (uncomment if used) ===
-# .idea/
-# *.iml
-# out/
-
-# === VS Code (uncomment if used) ===
-# .vscode/
-
 # --------------------------------------
 # OS-Specific Files
 # --------------------------------------
