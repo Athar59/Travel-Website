@@ -1,24 +1,58 @@
-# Compiled class file
+# --------------------------------------
+# Java & Maven Project .gitignore
+# --------------------------------------
+
+# === Java Compiled Files ===
 *.class
 
-# Log file
+# === Log Files ===
 *.log
 
-# BlueJ files
-*.ctxt
+# === Build Output ===
+/target/
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
+# === Maven Package Files ===
 *.jar
 *.war
-*.nar
 *.ear
+*.nar
 *.zip
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# === JVM Crash Logs ===
 hs_err_pid*
 replay_pid*
+
+# === BlueJ Files ===
+*.ctxt
+
+# === J2ME Temporary Files ===
+.mtj.tmp/
+
+# --------------------------------------
+# IDE Specific
+# --------------------------------------
+
+# === Eclipse ===
+.classpath
+.project
+.settings/
+
+# === IntelliJ IDEA (uncomment if used) ===
+# .idea/
+# *.iml
+# out/
+
+# === VS Code (uncomment if used) ===
+# .vscode/
+
+# --------------------------------------
+# OS-Specific Files
+# --------------------------------------
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
