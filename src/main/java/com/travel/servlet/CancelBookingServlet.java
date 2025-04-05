@@ -46,6 +46,7 @@ public class CancelBookingServlet extends HttpServlet {
 
             response.sendRedirect("booking_history.jsp");
         } catch (Exception e) {
+            
             e.printStackTrace();
             session.setAttribute("message", "Error occurred while canceling booking.");
             response.sendRedirect("booking_history.jsp");

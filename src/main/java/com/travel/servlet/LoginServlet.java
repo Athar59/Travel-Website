@@ -4,13 +4,15 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+
+import com.travel.db.DBConnection;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import com.travel.db.DBConnection;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -39,6 +41,7 @@ public class LoginServlet extends HttpServlet {
                 response.sendRedirect("login.jsp?error=Invalid credentials");
             }
         } catch (Exception e) {
+            
             e.printStackTrace();
             response.sendRedirect("login.jsp?error=Something went wrong");
         }

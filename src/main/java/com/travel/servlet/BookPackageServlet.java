@@ -50,21 +50,18 @@ public class BookPackageServlet extends HttpServlet {
 
             conn.close();
 
-            // Debugging 
             System.out.println("Package Name: " + packageName);
             System.out.println("Package Price: " + packagePrice);
 
-            // Storing package data in session
             session.setAttribute("package_id", String.valueOf(packageId));
             session.setAttribute("package_name", packageName);
             session.setAttribute("total_price", packagePrice);
 
-            // Redirecting to payment.jsp
             response.sendRedirect("payment.jsp");
 
         } catch (Exception e) {
             e.printStackTrace();
-            // Redirecting to booking failed page
+            
             response.sendRedirect("booking_failed.jsp");
         }
     }

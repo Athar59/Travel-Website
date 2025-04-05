@@ -8,14 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
             event.stopPropagation(); 
         });
 
-        // Hiding the navbar when clicking outside
         document.addEventListener("click", function (event) {
             if (!navContainer.contains(event.target) && !navbarToggle.contains(event.target)) {
                 navContainer.classList.remove("show");
             }
         });
 
-        // Hiding the navbar on scroll
         window.addEventListener("scroll", function () {
             navContainer.classList.remove("show");
         });
@@ -28,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
         link.addEventListener("click", function (e) {
             const href = this.getAttribute("href");
 
-            // If the link contains a hash (#contact) 
             if (href.includes("#")) {
                 e.preventDefault();
                 const targetId = href.split("#")[1];
@@ -37,14 +34,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (target) {
                     target.scrollIntoView({ behavior: "smooth", block: "start" });
                 } else {
-                    //  redirect to index.jsp while keeping the hash
+                    
                     window.location.href = "index.jsp#" + targetId;
                 }
             }
         });
     });
 
-    // Scrolling to the section if URL contains a hash(#)
     if (window.location.hash) {
         let target = document.querySelector(window.location.hash);
         if (target) {
@@ -78,7 +74,6 @@ function updateTotalPrice() {
     }
 }
 
-// Attaching the event listener only if element exists
 document.addEventListener("DOMContentLoaded", function () {
     let numPersons = document.getElementById("num_persons");
     if (numPersons) {

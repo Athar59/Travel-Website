@@ -1,11 +1,12 @@
 package com.travel.db;
 
-import com.travel.model.Package;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.travel.model.Package;
 
 public class PackageDao {
     public static List<Package> getAllPackages() {

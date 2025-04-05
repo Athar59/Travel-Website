@@ -45,17 +45,14 @@ public class PaymentServlet extends HttpServlet {
             System.out.println("Number of Persons: " + numPersons);
             System.out.println("Mode of Travel: " + modeOfTravel);
 
-            // checking if numPersons is valid
             if (numPersons <= 0) {
                 throw new IllegalArgumentException("Invalid number of persons: " + numPersons);
             }
 
-            // Multiplying price by number of persons if not already done
             double finalTotalPrice = totalPrice * numPersons;
 
             Connection conn = DBConnection.getConnection();
 
-            // Inserting payment record
             String sql = "INSERT INTO payments (user_id, package_id, package_name, amount, payment_status) VALUES (?, ?, ?, ?, 'SUCCESS')";
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setInt(1, userId);
@@ -64,7 +61,6 @@ public class PaymentServlet extends HttpServlet {
             stmt.setDouble(4, finalTotalPrice);
             stmt.executeUpdate();
 
-            // Inserting booking record
             sql = "INSERT INTO bookings (user_id, package_id, package_name, booking_date, mode_of_travel, num_persons, total_price) VALUES (?, ?, ?, ?, ?, ?, ?)";
             stmt = conn.prepareStatement(sql);
             stmt.setInt(1, userId);
@@ -73,18 +69,18 @@ public class PaymentServlet extends HttpServlet {
             stmt.setTimestamp(4, Timestamp.valueOf(LocalDateTime.now()));
             stmt.setString(5, modeOfTravel);
             stmt.setInt(6, numPersons);
-            stmt.setDouble(7, finalTotalPrice); // Use corrected total price
+            stmt.setDouble(7, finalTotalPrice); 
             stmt.executeUpdate();
 
             conn.close();
 
              response.sendRedirect("payment_success.jsp");
-           // response.sendRedirect("payment_failed.jsp");
+
 
         } catch (Exception e) {
             e.printStackTrace();
 
-            // Storing the failed payment data in session for retry
+
             session.setAttribute("package_id", request.getParameter("package_id"));
             session.setAttribute("package_name", request.getParameter("package_name"));
             session.setAttribute("total_price", request.getParameter("total_price"));

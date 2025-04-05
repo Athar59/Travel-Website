@@ -64,7 +64,7 @@ body {
     background-color: #cc0000;
 }
 
-/* Header */
+/* Header Section */
 .header-navbar {
     position: fixed;
     top: 0;
@@ -132,7 +132,6 @@ body {
     z-index: 101;
 }
 
-/* Responsiveness */
 @media screen and (max-width: 768px) {
     .header-menu-btn {
         display: block;
@@ -213,7 +212,6 @@ body {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
-/* Responsive Design */
 @media screen and (max-width: 1024px) {
     #home {
         height: 80vh;
@@ -270,7 +268,6 @@ body {
         font-size: 0.9rem;
     }
 }
-
 
 /* Packages Section */
 #packages {
@@ -419,7 +416,6 @@ body {
     transform: scale(1.05);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     #contact form {
         max-width: 90%;
@@ -463,8 +459,7 @@ body {
     }
 }
 
-
-/* Footer */
+/* Footer Section */
 .footer {
     height: auto; 
     background: #fff;
@@ -499,8 +494,6 @@ body {
     margin: 0 auto;
 }
 
-
-/* Responsiveness */
 @media (max-width: 768px) {
     .footer {
         padding: 20px 10px;
@@ -926,7 +919,6 @@ a.payment-retry-btn:hover {
     background-color: #0056b3;
 }
 
-/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -945,12 +937,10 @@ a.payment-retry-btn:hover {
     animation: fadeIn 0.5s;
 }
 
-/* Fix for mobile menu */
 body.menu-open {
     overflow: hidden;
 }
 
-/* Small screens adjustments */
 @media screen and (max-width: 576px) {
     .home-content h2 {
         font-size: 1.5rem;
